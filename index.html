@@ -14,8 +14,8 @@ var ballSpeedY = 10;
 
 var Paddle1X=0;
 var Paddle1Y=0;
-var PaddleHeight = 100;
-var PaddleWidth = 10;
+var PaddleHeight = 50;
+var PaddleWidth = 8;
   
 var Paddle2X=0;
 var Paddle2Y=0;
@@ -24,7 +24,7 @@ var p1Score = 0;
 var p2Score = 0;
   
 var winScreen = false;
-var winScore = 3;
+var winScore = 10;
   
 function calculateMousePos(evt){
   var rect = canvas.getBoundingClientRect();
@@ -71,7 +71,7 @@ function ballReset (){
   ballY = canvas.height/2;
   
   ballSpeedX = -1*ballSpeedX;
-  ballSpeedY = -1*ballSpeedY*0.35;
+  ballSpeedY = -1*ballSpeedY*0.40;
   if (p1Score>=winScore || p2Score >=winScore){
     winScreen = true; 
    
@@ -142,7 +142,7 @@ function colorRect (x,y,w,h,color) {
   
 function drawNet (){
   for (var i = 0; i< canvas.height;  i = i +40){
-   colorRect (canvas.width/2, i, 2, 20, 'white');
+   colorRect (canvas.width/2, i, 2, 20, 'blue');
   }
 
 }  
@@ -170,10 +170,10 @@ function drawEverything () {
 
   
   //paddle1
-  colorRect(Paddle1X,Paddle1Y,PaddleWidth,PaddleHeight,'white');
+  colorRect(Paddle1X,Paddle1Y,PaddleWidth,PaddleHeight,'blue');
   
    //paddle2
-  colorRect(canvas.width-PaddleWidth,Paddle2Y,PaddleWidth,PaddleHeight,'white');
+  colorRect(canvas.width-PaddleWidth,Paddle2Y,PaddleWidth,PaddleHeight,'blue');
   
   // Net
   drawNet();
@@ -196,5 +196,3 @@ function drawEverything () {
 </script>
 
 </html> 
-
-
